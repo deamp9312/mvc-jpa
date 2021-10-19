@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/boardNew.css">
+    <link rel="stylesheet" href="../css/every.css">
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <title>게시판 리스트</title>
+</head>
+<body>
+    <nav class="menu">
+        <a href="https://boardList.html">게시판 목록</a>
+        <a href="https://boardList.html">로그인</a>
+        <a href="https://boardList.html">회원가입</a>
+    </nav>
+<div >
+    <form th:action="@{/board/new}" th:object="${form}" method="post">
+
+        <main class="main">
+            <h1>게시판에 내용을 추가해주세요</h1>
+            <div>
+                <label ></label>
+                <input class="title__text" type="text" th:field="*{title}"
+                    placeholder="제목을 입력하세요">
+            </div>
+            <div >
+                <label ></label>
+                <input class="content__text" type="text" th:field="*{content}"
+                    placeholder="내용 입력">
+            </div>
+
+            <button class="create__button" type="submit">
+                <i class="fas fa-plus fa-2x"></i>
+            </button>
+            </form>
+            <br/>
+        </main>
+</div>
+</body>
+</html>
